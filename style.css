@@ -10,7 +10,14 @@ body {
     background-size: auto 100%;
   }  
 
- 
+  .panel-primary {
+    background-color: #e3e3e3;
+    border: none;
+  }
+  .panel-heading {
+    border:none
+  }
+
     
 
 
