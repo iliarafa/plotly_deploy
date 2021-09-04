@@ -5,18 +5,14 @@ body {
 
   .jumbotron {
     background-image: url("images/bellybutton.png");
-    background-size: 100% 100%;
     text-align: center;
     font-family: system-ui;
+    background-size: auto 100%;
   }  
 
-  p {
-    margin: 10px 0;
-    padding: 1px;
-    font-family: system-ui;
-    text-align: center;
+ 
     
-}
+
 
 
   

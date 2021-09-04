@@ -61,7 +61,6 @@ function init() {
   function buildCharts(sample) {
     console.log("sample = " + sample)
     const sampleFromInput = sample
-    console.log("sampleFromInput: " + sampleFromInput)
     var tableTitle = "<b>Top 10 Bacteria Culture Results</b>"
     // 2. Use d3.json to load and retrieve the samples.json file 
     d3.json(researchJSON).then((data) => {
@@ -78,7 +77,8 @@ function init() {
   
       // 7. Create the yticks for the bar chart.
   
-      var yticks = otu_ids.map( id => "OTU_" + id );
+      var yticks = otu_ids.map( id => "otu_" + id );
+      
   
       // 8. Create the trace for the bar chart. 
 
@@ -97,7 +97,11 @@ function init() {
       
       var barLayout = {
         title: (tableTitle),
-        paper_bgcolor: "rgba(0,0,0,0)"
+        paper_bgcolor: "rgba(0,0,0,0)",
+        font: {
+            family: 'system-ui',
+            size: 16,
+            color: '#696969'}
       };
       // 10. Use Plotly to plot the data with the layout. 
       Plotly.newPlot("bar", data, barLayout);
@@ -126,8 +130,11 @@ function init() {
       var bubbleLayout = {
         title: "<b>Bacteria Cultures Per Sample</b>",
         xaxis: {title: "OTU ID"},
-        showlegend: false,
-        paper_bgcolor: "rgba(0,0,0,0)"
+        paper_bgcolor: "rgba(0,0,0,0)",
+        font: {
+            family: 'system-ui',
+            size: 16,
+            color: '#696969'}
       };
   
       // 3. Use Plotly to plot the data with the layout.
@@ -139,7 +146,7 @@ function init() {
           type: "indicator",
           mode: "gauge+number",
           value: washing,
-          title: {text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per Week", font: {size: 24}},
+          title: {text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per Week", font: {size: 22}},
           gauge: {
             axis: {range: [null, 10], tickwidth: 2, tickcolor: "black"},
             bar: {color: "black"},
@@ -167,7 +174,11 @@ function init() {
         height: 400,
         margin: { t: 25, r: 25, l: 25, b: 25 },
         font: { color: "black", family: "Arial" },
-        paper_bgcolor: "rgba(0,0,0,0)"
+        paper_bgcolor: "rgba(0,0,0,0)",
+        font: {
+            family: 'system-ui',
+            size: 18,
+            color: '#696969'}
         
       };
   
