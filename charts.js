@@ -78,7 +78,7 @@ function init() {
   
       // 7. Create the yticks for the bar chart.
   
-      var yticks = otu_ids.map( id => "OTU " + id );
+      var yticks = otu_ids.map( id => "OTU_" + id );
   
       // 8. Create the trace for the bar chart. 
 
@@ -92,10 +92,12 @@ function init() {
         orientation: "h",
       };
       var data = [barData]
+     
       // 9. Create the layout for the bar chart. 
       
       var barLayout = {
-        title: (tableTitle)
+        title: (tableTitle),
+        paper_bgcolor: "rgba(0,0,0,0)"
       };
       // 10. Use Plotly to plot the data with the layout. 
       Plotly.newPlot("bar", data, barLayout);
@@ -125,6 +127,7 @@ function init() {
         title: "<b>Bacteria Cultures Per Sample</b>",
         xaxis: {title: "OTU ID"},
         showlegend: false,
+        paper_bgcolor: "rgba(0,0,0,0)"
       };
   
       // 3. Use Plotly to plot the data with the layout.
@@ -136,7 +139,7 @@ function init() {
           type: "indicator",
           mode: "gauge+number",
           value: washing,
-          title: {text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per Week", font: {size: 22}},
+          title: {text: "<b>Belly Button Washing Frequency</b> <br>Scrubs per Week", font: {size: 24}},
           gauge: {
             axis: {range: [null, 10], tickwidth: 2, tickcolor: "black"},
             bar: {color: "black"},
@@ -163,7 +166,9 @@ function init() {
         width: 500,
         height: 400,
         margin: { t: 25, r: 25, l: 25, b: 25 },
-        font: { color: "black", family: "Arial" }
+        font: { color: "black", family: "Arial" },
+        paper_bgcolor: "rgba(0,0,0,0)"
+        
       };
   
       // 6. Use Plotly to plot the gauge data and layout.
